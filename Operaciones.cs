@@ -14,7 +14,7 @@ namespace NominaMensual
 
         public string Conectar()
         {
-            //SQLiteConnection cnx = new SQLiteConnection("Data source=C:\\sistema\\nomina.s3db; Version=3;");
+            
 
             SQLiteConnection cnx = new SQLiteConnection("Data source=C://sistema//nomina.s3db; Version=3;");
 

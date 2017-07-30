@@ -45,6 +45,10 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnC = new System.Windows.Forms.Button();
+            this.btnD = new System.Windows.Forms.Button();
+            this.btnB = new System.Windows.Forms.Button();
+            this.btnA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,11 +56,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 306);
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 409);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(747, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(747, 229);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewA_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // comboBox1
             // 
@@ -223,12 +228,56 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnC
+            // 
+            this.btnC.Location = new System.Drawing.Point(9, 362);
+            this.btnC.Name = "btnC";
+            this.btnC.Size = new System.Drawing.Size(103, 32);
+            this.btnC.TabIndex = 61;
+            this.btnC.Text = "Cabecera Nomina";
+            this.btnC.UseVisualStyleBackColor = true;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
+            // 
+            // btnD
+            // 
+            this.btnD.Location = new System.Drawing.Point(403, 362);
+            this.btnD.Name = "btnD";
+            this.btnD.Size = new System.Drawing.Size(103, 32);
+            this.btnD.TabIndex = 60;
+            this.btnD.Text = "Detalle Nomina";
+            this.btnD.UseVisualStyleBackColor = true;
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
+            // 
+            // btnB
+            // 
+            this.btnB.Location = new System.Drawing.Point(268, 362);
+            this.btnB.Name = "btnB";
+            this.btnB.Size = new System.Drawing.Size(114, 32);
+            this.btnB.TabIndex = 59;
+            this.btnB.Text = "Cargos";
+            this.btnB.UseVisualStyleBackColor = true;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            // 
+            // btnA
+            // 
+            this.btnA.Location = new System.Drawing.Point(136, 362);
+            this.btnA.Name = "btnA";
+            this.btnA.Size = new System.Drawing.Size(102, 32);
+            this.btnA.TabIndex = 58;
+            this.btnA.Text = "Empleados";
+            this.btnA.UseVisualStyleBackColor = true;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(747, 461);
+            this.ClientSize = new System.Drawing.Size(747, 638);
+            this.Controls.Add(this.btnC);
+            this.Controls.Add(this.btnD);
+            this.Controls.Add(this.btnB);
+            this.Controls.Add(this.btnA);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button17);
@@ -249,6 +298,7 @@
             this.Name = "Form1";
             this.Text = "Sistema de Nomina";
             this.TransparencyKey = System.Drawing.SystemColors.Desktop;
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -274,6 +324,10 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnC;
+        private System.Windows.Forms.Button btnD;
+        private System.Windows.Forms.Button btnB;
+        private System.Windows.Forms.Button btnA;
     }
 }
 

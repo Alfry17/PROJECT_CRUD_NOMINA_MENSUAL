@@ -94,61 +94,99 @@ namespace NominaMensual
 
         private void btnDivi_Click(object sender, EventArgs e)
         {
-            operacion = "/";
-            primero = float.Parse(txtPantalla.Text);
-            txtPantalla.Clear();
+            try
+            {
+                operacion = "-";
+                primero = float.Parse(txtPantalla.Text);
+                txtPantalla.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
 
 
         private void btnSum_Click(object sender, EventArgs e)
         {
-            operacion = "+";
-            primero = float.Parse(txtPantalla.Text);
-            txtPantalla.Clear();          
+            try
+            {
+                operacion = "+";
+                primero = float.Parse(txtPantalla.Text);
+                txtPantalla.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+                  
         }
 
 
         private void btnRest_Click(object sender, EventArgs e)
         {
-            operacion = "-";
-            primero = float.Parse(txtPantalla.Text);
-            txtPantalla.Clear();
+            try
+            {
+                operacion = "-";
+                primero = float.Parse(txtPantalla.Text);
+                txtPantalla.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
 
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                segundo = float.Parse(txtPantalla.Text);
 
-            segundo = float.Parse(txtPantalla.Text);
+
 
 
                 switch (operacion)
                 {
-                case "+":
+                    case "+":
                         resultado = primero + segundo;
-                            txtPantalla.Text = resultado.ToString();
-                               break;
+                        txtPantalla.Text = resultado.ToString();
+                        break;
 
-                case "-":
-                       resultado = primero - segundo;
-                            txtPantalla.Text = resultado.ToString();
-                                break;
+                    case "-":
+                        resultado = primero - segundo;
+                        txtPantalla.Text = resultado.ToString();
+                        break;
 
-                case "x":
-                    resultado = primero * segundo;
-                    txtPantalla.Text = resultado.ToString();
-                    break;
+                    case "x":
+                        resultado = primero * segundo;
+                        txtPantalla.Text = resultado.ToString();
+                        break;
 
 
-                case "/":
-                       resultado = primero / segundo;
-                    txtPantalla.Text = resultado.ToString();
-                    break;
-             }
-           }
+                    case "/":
+                        resultado = primero / segundo;
+                        txtPantalla.Text = resultado.ToString();
+                        break;
 
-        private void button11_Click(object sender, EventArgs e)
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+            private void button11_Click(object sender, EventArgs e)
         {
             txtPantalla.Clear();
         }
