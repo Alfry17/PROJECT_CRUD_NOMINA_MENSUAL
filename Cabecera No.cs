@@ -23,24 +23,7 @@ namespace NominaMensual
             this.Close();
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Borra solo numero por numero//
-                txtnum_nomina.Text = "";
-                txtnombre_Empresa.Text = "";
-                txttipo_nomina.Text = "";
-                dateTimePicker4.Text = "";
-                dateTimePicker5.Text = "";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -49,6 +32,14 @@ namespace NominaMensual
                 //INSERT para agregar a la base de dato nuevos registro//
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO cabecera_nomina (num_nomina, nombre_empresa, tipo_nomina, fecha_inicio, fecha_final) VALUES ('" + txtnum_nomina.Text + "', '" + txtnombre_Empresa.Text + "', '" + txttipo_nomina.Text + "', '" + dateTimePicker4.Text + "', '"  + dateTimePicker5.Text + "')");
+
+
+                //Borra solo numero por numero//
+                txtnum_nomina.Text = "";
+                txtnombre_Empresa.Text = "";
+                txttipo_nomina.Text = "";
+                dateTimePicker4.Text = "";
+                dateTimePicker5.Text = "";
 
             }
             catch (Exception ex)

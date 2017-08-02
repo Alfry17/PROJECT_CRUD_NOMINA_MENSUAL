@@ -135,7 +135,7 @@ namespace NominaMensual
                 System.Data.DataTable res = new System.Data.DataTable();
                 Operaciones op = new Operaciones();
 
-                dataGridView1.DataSource = op.ConsultaconResultado(" SELECT *FROM empleados");
+                dataGridView1.DataSource = op.ConsultaconResultado("  SELECT * FROM  cabecera_nomina, cargo, empleados ");
             }
             catch (Exception ex)
             {
@@ -205,7 +205,7 @@ namespace NominaMensual
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex == 0)
             {
                 try
                 {

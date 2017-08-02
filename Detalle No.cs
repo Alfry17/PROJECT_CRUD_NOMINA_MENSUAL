@@ -31,6 +31,20 @@ namespace NominaMensual
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO detalle_nomina (cod_det_nom, sueldo_bruto, isr, ss, otros, total_deducciones, sueldo_neto, cod_empleado, num_nomina) VALUES('" + txtcod.Text + "', '" + txtsueldo.Text + "', '" + txtISR.Text + "', '" + txtSS.Text + "', '"  + txtOTROS.Text + "', '" + txttotal.Text + "', '" + txtsueldoNeto.Text + "', '"  + txtCodEmple.Text + "', '" + txtNunNomi.Text + "')");
 
+
+      
+                    //Borra solo numero por numero//
+                    txtcod.Text = "";
+                    txtsueldo.Text = "";
+                    txtISR.Text = "";
+                    txtSS.Text = "";
+                    txtOTROS.Text = "";
+                    txttotal.Text = "";
+                    txtsueldo.Text = "";
+                    txtCodEmple.Text = "";
+                    txtNunNomi.Text = "";
+                    txtsueldoNeto.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -38,30 +52,13 @@ namespace NominaMensual
             }
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+       
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Borra solo numero por numero//
-                txtcod.Text = "";
-                txtsueldo.Text = "";
-                txtISR.Text = "";
-                txtSS.Text = "";
-                txtOTROS.Text = "";
-                txttotal.Text = "";
-                txtsueldo.Text = "";
-                txtCodEmple.Text = "";
-                txtNunNomi.Text = "";
-                txtsueldoNeto.Text = "";
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            Form formulario = new Nomina();
+            formulario.Show();
         }
-
     }
 
  }

@@ -270,7 +270,7 @@ namespace NominaMensual
             foreach (DataRow dr in dt_empleado.Rows)
             {
 
-                string cod_empleado, nombre, apellido, cedula, sueldo, sexo, direccion, cod_cargo, nombre_cargo;
+                string cod_empleado, nombre, apellido, cedula, sueldo, sexo, direccion, cod_cargo;
 
                 try
                 {
