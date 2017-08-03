@@ -173,12 +173,13 @@ namespace NominaMensual
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+           
             try
             {
                 //INSERT para agregar a la base de dato nuevos registro//
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO empleados(cedula, nombre, apellido, direccion, sexo, sueldo, fecha_nacimiento, fecha_ingreso, cod_cargo, nombre_cargo) VALUES('" + txt7.Text + "', '" + txt1.Text + "', '" + txt2.Text + "', '" + txt3.Text + "', '" + txt4.Text + "', '" + txt5.Text + "', '" + dateTimePicker1.Text + "','" + dateTimePicker3.Text + "', '" + txtCalgo.Text + "','" + txtnombre_cargo.Text + "')");
-
+                MessageBox.Show("Se agrego correctamente");
                 //*********************************************************************************************************//
 
 
@@ -270,7 +271,10 @@ namespace NominaMensual
             foreach (DataRow dr in dt_empleado.Rows)
             {
 
-                string cod_empleado, nombre, apellido, cedula, sueldo, sexo, direccion, cod_cargo;
+                string cod_empleado, 
+                    nombre, apellido, 
+                    cedula, sueldo, sexo, 
+                    direccion, cod_cargo, nombre_cargo;
 
                 try
                 {
@@ -283,7 +287,8 @@ namespace NominaMensual
                     sexo = dr["sexo"].ToString();
                     direccion = dr["direccion"].ToString();
                     cod_cargo = dr["cod_cargo"].ToString();
-
+                    nombre_cargo = dr["nombre_cargo"].ToString();
+                   
 
 
 
@@ -294,6 +299,8 @@ namespace NominaMensual
                     txt7.Text = cedula;
                     txt5.Text = sueldo;
                     txtCalgo.Text = cod_cargo;
+                    txtnombre_cargo.Text = nombre_cargo;
+                  
                 }
                 catch (Exception ex)
                 {
@@ -356,7 +363,11 @@ namespace NominaMensual
                     //Borra de la base de dato de la tabla empleado//
                     Operaciones op = new Operaciones();
                     op.ConsultasinResultado("DELETE from empleados WHERE cod_empleado = " + txtID.Text);
-
+                    MessageBox.Show("Borrado");
+                }
+                else
+                {
+                    MessageBox.Show("Nose pudo Borrar");
                 }
             }
             catch (Exception ex)
@@ -372,7 +383,7 @@ namespace NominaMensual
             {
                 //Actualiza los campos de la tabla Cargos//
                 Operaciones op = new Operaciones();
-                op.ConsultasinResultado("UPDATE empleados SET cedula = '" + txt7.Text + "', nombre = '" + txt1.Text + "', apellido = '" + txt2.Text + "', direccion = '" + txt3.Text + "' sexo = '" + txt4.Text + "' sueldo = '" + txt5.Text + "' fecha_nacimiento = '" + dateTimePicker1.Text + "' fecha_ingreso = '" + dateTimePicker3.Text + "' cod_cargo = '" + txtCalgo.Text + "' nombre_cargo = '" + txtnombre_cargo.Text + ""); //' WHERE cod_empleado LIKE ' %" + txtCodigo.ToString() + "%' ");
+                op.ConsultasinResultado("UPDATE empleados SET cedula = '" + txt7.Text + "', nombre = '" + txt1.Text + "', apellido = '" + txt2.Text + "', direccion = '" + txt3.Text + "', sexo = '" + txt4.Text + "', sueldo = '" + txt5.Text + "', fecha_nacimiento = '" + dateTimePicker1.Text + "', fecha_ingreso = '" + dateTimePicker3.Text + "', cod_cargo = '" + txtCalgo.Text + "', nombre_cargo = '" + txtnombre_cargo.Text + "' ");
 
             }
             catch (Exception ex)

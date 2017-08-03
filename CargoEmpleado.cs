@@ -17,26 +17,9 @@ namespace NominaMensual
             InitializeComponent();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Actualiza nuevas ediciones de registro de la tabla cargos//
-                Operaciones op = new Operaciones();
-                op.ConsultasinResultado("UPDATE cargo SET cod_cargo = '" + txtCa.Text + "', nombre_cargo = '" + txtCarg.Text + "')");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
-        }
+       
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            txtCa.Text = "";
-            txtCarg.Text = "";
-        }
+      
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
@@ -45,6 +28,10 @@ namespace NominaMensual
                 //Insertar nuevos cargos en la base de datos//
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO cargo (cod_cargo, nombre_cargo) VALUES('" + txtCa.Text + "', '" + txtCarg.Text + "')");
+
+                txtCa.Text = "";
+                txtCarg.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -58,5 +45,67 @@ namespace NominaMensual
             //cerrar formulario//
             this.Close();
         }
-    }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            Operaciones oper = new Operaciones();
+
+            System.Data.DataTable dt = new System.Data.DataTable();
+
+
+            DataTable dgvdatos = oper.ConsultaconResultado(" SELECT  * FROM cargo where cod_cargo='" + txtiDD.Text + "' ");
+            foreach (DataRow dr in dgvdatos.Rows)
+            {
+
+                string A, B;
+
+                try
+                {
+                    //Esto me permitira buscar en mi base de dato por ID//
+                    A = dr["cod_cargo"].ToString();
+                    txtCa.Text = A;
+
+                    B = dr["nombre_cargo"].ToString();
+                    txtCarg.Text = B;
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtiDD.Text != null)
+                {
+                    //Borra registro de la base de dato de la tabla cabecera_nomina ene ste caso //
+                    Operaciones op = new Operaciones();
+                    op.ConsultasinResultado("DELETE from cargo WHERE cod_cargo = " + txtiDD.Text);
+                    MessageBox.Show("Borrado");
+
+                    //Limpio los TextBox automaticamente cuando borro//
+                    txtCa.Text = "";
+                    txtCarg.Text = "";
+                    txtiDD.Text = "";
+
+                }
+                else
+                {
+                    MessageBox.Show("Nose pudo Borrar");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+    }    
 }

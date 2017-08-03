@@ -135,7 +135,7 @@ namespace NominaMensual
                 System.Data.DataTable res = new System.Data.DataTable();
                 Operaciones op = new Operaciones();
 
-                dataGridView1.DataSource = op.ConsultaconResultado("  SELECT * FROM  cabecera_nomina, cargo, empleados ");
+                dataGridView1.DataSource = op.ConsultaconResultado("  SELECT * FROM  inner join cabecera_nomina, cargo where cod_empleado ");
             }
             catch (Exception ex)
             {
@@ -231,9 +231,7 @@ namespace NominaMensual
                 {
                     MessageBox.Show(ex.Message);
                 }
-              
-
-
+             
             }
         }
 
@@ -280,8 +278,31 @@ namespace NominaMensual
 
         private void btnD_Click(object sender, EventArgs e)
         {
-            Form formulario = new Detalle_No();
-            formulario.Show();
+            try
+            {
+                Operaciones oper = new Operaciones();
+                DataSet ds = new DataSet();
+
+                DataTable dt = oper.ConsultaconResultado(" SELECT  * FROM empleados");
+                ds.Tables.Add(dt);
+
+                ds.WriteXml(@"C:\bdd\reporte.xml");
+
+              
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            VisorReporte f = new VisorReporte();
+            f.Show();
         }
     }
 

@@ -49,6 +49,7 @@
             this.btnD = new System.Windows.Forms.Button();
             this.btnB = new System.Windows.Forms.Button();
             this.btnA = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -187,7 +188,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(635, 283);
+            this.label3.Location = new System.Drawing.Point(641, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 30;
@@ -198,7 +199,7 @@
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.Color.Red;
-            this.button17.Location = new System.Drawing.Point(638, 224);
+            this.button17.Location = new System.Drawing.Point(644, 348);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(91, 46);
             this.button17.TabIndex = 32;
@@ -240,9 +241,11 @@
             // 
             // btnD
             // 
-            this.btnD.Location = new System.Drawing.Point(403, 362);
+            this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnD.ForeColor = System.Drawing.Color.Green;
+            this.btnD.Location = new System.Drawing.Point(401, 325);
             this.btnD.Name = "btnD";
-            this.btnD.Size = new System.Drawing.Size(103, 32);
+            this.btnD.Size = new System.Drawing.Size(103, 69);
             this.btnD.TabIndex = 60;
             this.btnD.Text = "Detalle Nomina";
             this.btnD.UseVisualStyleBackColor = true;
@@ -268,12 +271,25 @@
             this.btnA.UseVisualStyleBackColor = true;
             this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Green;
+            this.button3.Location = new System.Drawing.Point(517, 325);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 69);
+            this.button3.TabIndex = 62;
+            this.button3.Text = "Visor de Reporte";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(747, 638);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.btnD);
             this.Controls.Add(this.btnB);
@@ -294,6 +310,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBuscar);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Sistema de Nomina";
@@ -328,6 +345,7 @@
         private System.Windows.Forms.Button btnD;
         private System.Windows.Forms.Button btnB;
         private System.Windows.Forms.Button btnA;
+        private System.Windows.Forms.Button button3;
     }
 }
 

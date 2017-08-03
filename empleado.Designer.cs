@@ -193,6 +193,7 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(178, 566);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox10.Size = new System.Drawing.Size(103, 20);
             this.textBox10.TabIndex = 20;
             // 
@@ -384,7 +385,7 @@
             this.flowLayoutPanel1.Controls.Add(this.label13);
             this.flowLayoutPanel1.Controls.Add(this.txtID);
             this.flowLayoutPanel1.Controls.Add(this.btnBus);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(25, 11);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(25, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(345, 49);
             this.flowLayoutPanel1.TabIndex = 47;
