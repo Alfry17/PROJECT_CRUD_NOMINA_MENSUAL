@@ -30,11 +30,11 @@ namespace NominaMensual
                 //INSERT para agregar a la base de dato nuevos registro//
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO detalle_nomina (cod_det_nom, sueldo_bruto, isr, ss, otros, total_deducciones, sueldo_neto, cod_empleado, num_nomina) VALUES('" + txtcod.Text + "', '" + txtsueldo.Text + "', '" + txtISR.Text + "', '" + txtSS.Text + "', '"  + txtOTROS.Text + "', '" + txttotal.Text + "', '" + txtsueldoNeto.Text + "', '"  + txtCodEmple.Text + "', '" + txtNunNomi.Text + "')");
+                MessageBox.Show("Se agrego correctamente");
 
 
-      
-                    //Borra solo numero por numero//
-                    txtcod.Text = "";
+                //Borra solo numero por numero//
+                txtcod.Text = "";
                     txtsueldo.Text = "";
                     txtISR.Text = "";
                     txtSS.Text = "";

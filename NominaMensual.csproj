@@ -128,6 +128,12 @@
     <Compile Include="CargoEmpleado.Designer.cs">
       <DependentUpon>CargoEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Detalle No.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisualizando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizando.Designer.cs">
+      <DependentUpon>frmVisualizando.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nomina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +167,6 @@
     <Compile Include="Operaciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisorReporte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisorReporte.Designer.cs">
-      <DependentUpon>VisorReporte.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Cabecera No.resx">
       <DependentUpon>Cabecera No.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +176,10 @@
     <EmbeddedResource Include="CargoEmpleado.resx">
       <DependentUpon>CargoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Detalle No.resx">
       <DependentUpon>Detalle No.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizando.resx">
+      <DependentUpon>frmVisualizando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nomina.resx">
       <DependentUpon>Nomina.cs</DependentUpon>
@@ -191,9 +204,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VisorReporte.resx">
-      <DependentUpon>VisorReporte.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="NominaMensual_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -135,7 +135,7 @@ namespace NominaMensual
                 System.Data.DataTable res = new System.Data.DataTable();
                 Operaciones op = new Operaciones();
 
-                dataGridView1.DataSource = op.ConsultaconResultado("  SELECT * FROM  inner join cabecera_nomina, cargo where cod_empleado ");
+                dataGridView1.DataSource = op.ConsultaconResultado("  SELECT * FROM empleados WHERE cod_empleado ");
             }
             catch (Exception ex)
             {
@@ -223,6 +223,7 @@ namespace NominaMensual
                     Empleado.xfecha_de_ingreso = row.Cells[5].Value.ToString();
                     Empleado.xcod_cargo = row.Cells[6].Value.ToString();
 
+
                     //Y luego llamo al formulario donde agrego nuevos registros//
                     Form formulario = new Empleado();
                     formulario.Show();
@@ -276,33 +277,18 @@ namespace NominaMensual
             formulario.Show();
         }
 
-        private void btnD_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Operaciones oper = new Operaciones();
-                DataSet ds = new DataSet();
-
-                DataTable dt = oper.ConsultaconResultado(" SELECT  * FROM empleados");
-                ds.Tables.Add(dt);
-
-                ds.WriteXml(@"C:\bdd\reporte.xml");
-
-              
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
+       
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            VisorReporte f = new VisorReporte();
-            f.Show();
+            frmVisualizando f = new frmVisualizando("CrystalReport3.rpt");
+            f.Show();  
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Detalle_No();
+            formulario.Show();
         }
     }
 

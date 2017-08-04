@@ -28,6 +28,8 @@ namespace NominaMensual
                 //Insertar nuevos cargos en la base de datos//
                 Operaciones op = new Operaciones();
                 op.ConsultasinResultado("INSERT INTO cargo (cod_cargo, nombre_cargo) VALUES('" + txtCa.Text + "', '" + txtCarg.Text + "')");
+                MessageBox.Show("Se agrego correctamente");
+
 
                 txtCa.Text = "";
                 txtCarg.Text = "";
